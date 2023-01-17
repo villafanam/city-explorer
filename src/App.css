@@ -36,3 +36,83 @@
     transform: rotate(360deg);
   }
 }
+
+h1
+{
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 48px;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: uppercase;
+  text-align: center;
+
+  color: #FFFFFF;
+  background: #912C22;
+  text-shadow: 0 0 10px #FFFFFF;
+  color: #FFFFFF;
+  background: #912C22;
+}
+.card
+{
+  background-color: #3d3f45;
+  width:fit-content;
+  color:antiquewhite;
+  margin-top: 50px;
+  border-radius: 10px;
+}
+
+.card-title
+{
+  color: #FFFFFF;
+  background: #912C22;
+  text-shadow: 0 0 10px #FFFFFF;
+  color: #FFFFFF;
+  background: #912C22;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.card-text
+{
+  font-size: 1.25rem;
+}
+
+body
+{
+  display: flex;
+  justify-content:center;
+  width: 100%;
+  background-color: #282c34;
+}
+
+.myButton {
+  color: rgb(255, 255, 255); font-size: 16px; line-height: 16px; padding: 6px; border-radius: 10px; font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, rgb(175, 53, 41) 0%, rgb(145, 44, 34) 50%, rgb(124, 38, 29) 100%); box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px solid #912C22; display: inline-block;
+}
+
+  .myButton:hover {
+  background: #AF3529; 
+}
+  
+.myButton:active {
+  background: #7C261D; 
+}
+
+.lbl
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  color: antiquewhite;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+}
+
+  

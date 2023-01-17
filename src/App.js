@@ -58,9 +58,9 @@ class App extends React.Component {
         <h1>City Explorer</h1>
 
           <form onSubmit={this.getCityData}>
-            <label htmlFor=""> Pick a City!
+            <label class="lbl"> Pick a City!
               <input type="text" onInput={this.handleInput} />
-              <button type='submit'>Explore</button>
+              <button class='myButton' type='submit'>Explore</button>
             </label>
           </form>
 
@@ -68,7 +68,7 @@ class App extends React.Component {
           { 
             this.state.error
             ? <p>{this.state.errorMessage}</p>
-            : <Card style={{ width: '18rem' }}>
+            : <Card >
                 <Card.Img variant="top" src={this.state.cityMap} />
                 <Card.Body>
                   <Card.Title>{this.state.cityData.display_name}</Card.Title>
