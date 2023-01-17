@@ -81,12 +81,24 @@ h1
   font-size: 1.25rem;
 }
 
-body
+.error
+{
+  width: 600px;
+}
+
+body 
+{
+  background-color: #282c34;
+}
+
+.appBody
 {
   display: flex;
+  flex-direction: column;
   justify-content:center;
-  width: 100%;
-  background-color: #282c34;
+  align-items: center;
+  width: 80%;
+  margin: auto;
 }
 
 .myButton {
