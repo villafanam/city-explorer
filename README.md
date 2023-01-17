@@ -25,5 +25,5 @@
 + Name of feature: 4
 + Estimate of time needed to complete: 3 hr
 + Start time: 2:00 PM
-+ Finish time: _____
-+ Actual time needed to complete: _____
++ Finish time: 5:30 PM
++ Actual time needed to complete: 3.5 hr
