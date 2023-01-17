@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import axios from 'axios';
 import Card from 'react-bootstrap/Card';
+import errorImg from './images/error.jpg'
 
 class App extends React.Component {
   constructor(props)
@@ -56,9 +57,9 @@ class App extends React.Component {
     return(
       <>
         <h1>City Explorer</h1>
-
+        <main className='appBody'>
           <form onSubmit={this.getCityData}>
-            <label class="lbl"> Pick a City!
+            <label className="lbl"> Pick a City!
               <input type="text" onInput={this.handleInput} />
               <button class='myButton' type='submit'>Explore</button>
             </label>
@@ -67,7 +68,13 @@ class App extends React.Component {
           {/* Ternary - W ? T : F */}
           { 
             this.state.error
-            ? <p>{this.state.errorMessage}</p>
+            ?  <Card >
+                  <Card.Img variant="top" src={errorImg} className="error" />
+                  <Card.Body>
+                    <Card.Title>ERROR...</Card.Title>
+                   <Card.Text>{this.state.errorMessage}</Card.Text>
+                  </Card.Body>
+                </Card> 
             : <Card >
                 <Card.Img variant="top" src={this.state.cityMap} />
                 <Card.Body>
@@ -81,10 +88,9 @@ class App extends React.Component {
                   }
                   
                 </Card.Body>
-              </Card> 
-
-            
+              </Card>  
           }
+        </main>
       </>
       
     )
@@ -93,4 +99,5 @@ class App extends React.Component {
 
 export default App;
 
+{/* <p>{this.state.errorMessage}</p> */}
 
