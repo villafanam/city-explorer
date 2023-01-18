@@ -62,7 +62,7 @@ h1
   width:fit-content;
   color:antiquewhite;
   margin-top: 50px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .card-title
@@ -79,6 +79,11 @@ h1
 .card-text
 {
   font-size: 1.25rem;
+}
+
+.card-img-top
+{
+  border-radius: 5px;
 }
 
 .error

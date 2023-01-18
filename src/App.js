@@ -25,16 +25,16 @@ class App extends React.Component {
     })
   }
 
-  handleWeather = async (event, cityInfo) => {
-    event.preventDefault();
+  handleWeather = async (cityInfo) => {
+    //event.preventDefault();
     // TODO: BUILD OUT FUNCTIONALITY TO CALL MY SERVER AND GET PET DATA
     
     try {
       // TODO:  BUILD OUT MY URL FOR AXIOS TO HIT
-      //let url = `${process.env.REACT_APP_SERVER}/weather?lat=${cityInfo.lat}&lon=${cityInfo.lon}&searchQuery=${this.state.city}`;
-      let url = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}`;
+      let url = `${process.env.REACT_APP_SERVER}/weather?lat=${cityInfo.lat}&lon=${cityInfo.lon}`;
+      // let url = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}`;
       
-      //console.log(url);
+      console.log(url);
 
       let weatherData = await axios.get(url);
       console.log(weatherData.data);
@@ -73,7 +73,7 @@ class App extends React.Component {
         // cityMap: `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${this.state.cityData.lat},${this.state.cityData.lon}&zoom=10`
       })
 
-      this.handleWeather(event,cityDataFromAxios.data[0]);
+      this.handleWeather(cityDataFromAxios.data[0]);
    
     } catch (error) {
       console.log(error);
@@ -111,7 +111,7 @@ class App extends React.Component {
           { 
             this.state.error
             ?  <Card >
-                  <Card.Img variant="top" src={errorImg} className="error" />
+                  <Card.Img variant="top" src='{errorImg}' className="error" />
                   <Card.Body>
                     <Card.Title>ERROR...</Card.Title>
                    <Card.Text>{this.state.errorMessage}</Card.Text>

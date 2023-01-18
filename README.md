@@ -36,3 +36,16 @@
 + Start time: 2:00 PM
 + Finish time: 5:30 PM
 + Actual time needed to complete: 3.5 hr
+
+## Lab 07
+
+Name of feature: 3
+Estimate of time needed to complete: 3 hr
+
+Start time: 2:00 PM
+
+Finish time: 10:00
+
+Actual time needed to complete: 8 hr
+
+![city-explorer domain](./images/city-explorer-domain.jpg)
