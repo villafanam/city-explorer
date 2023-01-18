@@ -47,6 +47,10 @@ class App extends React.Component {
     } 
     catch (error) {
       console.log(error.message);
+      this.setState({
+        error: true,
+        errorMessage: error.message
+      })
     }
   }
 
