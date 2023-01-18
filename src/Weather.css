@@ -3,3 +3,8 @@
   text-align: center;
   /* margin-right: 50px; */
 }
+
+.weatherImg
+{
+  width: 128px;
+}
