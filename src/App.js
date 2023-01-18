@@ -3,6 +3,8 @@ import './App.css';
 import axios from 'axios';
 import Card from 'react-bootstrap/Card';
 import errorImg from './images/error.jpg'
+import Weather from './Weather'
+import { Container } from 'react-bootstrap';
 
 class App extends React.Component {
   constructor(props)
@@ -13,6 +15,7 @@ class App extends React.Component {
       cityData: [],
       error: false,
       errorMessage: '',
+      weatherData: [],
     }
   }
 
@@ -20,6 +23,31 @@ class App extends React.Component {
     this.setState({
       city: event.target.value
     })
+  }
+
+  handleWeather = async (event, cityInfo) => {
+    event.preventDefault();
+    // TODO: BUILD OUT FUNCTIONALITY TO CALL MY SERVER AND GET PET DATA
+    
+    try {
+      // TODO:  BUILD OUT MY URL FOR AXIOS TO HIT
+      //let url = `${process.env.REACT_APP_SERVER}/weather?lat=${cityInfo.lat}&lon=${cityInfo.lon}&searchQuery=${this.state.city}`;
+      let url = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}`;
+      
+      //console.log(url);
+
+      let weatherData = await axios.get(url);
+      console.log(weatherData.data);
+
+    // TODO: SET STATE WITH THE INFORMATION COMING BACK FROM AXIOS
+
+      this.setState({
+        weatherData: weatherData.data, 
+      });
+    } 
+    catch (error) {
+      console.log(error.message);
+    }
   }
 
   getCityData = async (event) => {
@@ -41,6 +69,7 @@ class App extends React.Component {
         // cityMap: `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${this.state.cityData.lat},${this.state.cityData.lon}&zoom=10`
       })
 
+      this.handleWeather(event,cityDataFromAxios.data[0]);
    
     } catch (error) {
       console.log(error);
@@ -61,9 +90,18 @@ class App extends React.Component {
           <form onSubmit={this.getCityData}>
             <label className="lbl"> Pick a City!
               <input type="text" onInput={this.handleInput} />
-              <button class='myButton' type='submit'>Explore</button>
+              <button className='myButton' type='submit'>Explore</button>
             </label>
           </form>
+          <Container className='weatherCard'>
+            {this.state.weatherData.map(forcast => {
+              return(
+                <Weather 
+                date={forcast.date}
+                description={forcast.description}
+                />
+              );})}
+          </Container>
 
           {/* Ternary - W ? T : F */}
           { 
@@ -89,7 +127,9 @@ class App extends React.Component {
                   
                 </Card.Body>
               </Card>  
+              
           }
+
         </main>
       </>
       
