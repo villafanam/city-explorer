@@ -32,7 +32,7 @@ class App extends React.Component {
       let url = `${process.env.REACT_APP_SERVER}/movie?cityName=${this.state.city}`;
 
       let moviesFromAxios = await axios.get(url);
-      console.log(moviesFromAxios.data);
+      //console.log(moviesFromAxios.data);
 
       // TODO: SET STATE WITH THE INFORMATION COMING BACK FROM AXIOS
       this.setState({
@@ -61,7 +61,7 @@ class App extends React.Component {
       //console.log(url);
 
       let weatherData = await axios.get(url);
-      //console.log(weatherData.data);
+      console.log(weatherData.data);
 
     // TODO: SET STATE WITH THE INFORMATION COMING BACK FROM AXIOS
 
@@ -129,6 +129,7 @@ class App extends React.Component {
                 <Weather 
                 date={forcast.date}
                 description={forcast.description}
+                weatherImg={forcast.weatherImg}
                 />
               );})}
           </Container>
