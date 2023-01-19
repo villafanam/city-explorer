@@ -111,7 +111,7 @@ class App extends React.Component {
           { 
             this.state.error
             ?  <Card >
-                  <Card.Img variant="top" src='{errorImg}' className="error" />
+                  <Card.Img variant="top" src={errorImg} className="error" />
                   <Card.Body>
                     <Card.Title>ERROR...</Card.Title>
                    <Card.Text>{this.state.errorMessage}</Card.Text>
