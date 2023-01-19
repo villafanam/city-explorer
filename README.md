@@ -25,7 +25,7 @@
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 + [ Error red text between blue binary data on screen by Marco Verch](https://www.flickr.com/photos/30478819@N08/32983982788)
-+ [weather icons](https://github.com/Makin-Things/weather-icons)
++ [weather icons by Makin-Things](https://github.com/Makin-Things/weather-icons)
 
 ## Lab 06
 
@@ -45,5 +45,18 @@ Start time: 1:30 PM
 Finish time: 7:30 PM
 
 Actual time needed to complete: 6 hr
+
+![city-explorer domain](../city-explorer/src/images/city-explorer-domain.jpg)
+
+## Lab 09
+
+Name of feature: 2
+Estimate of time needed to complete: 3 hr
+
+Start time: 2:00 PM
+
+Finish time:  PM
+
+Actual time needed to complete:  hr
 
 ![city-explorer domain](../city-explorer/src/images/city-explorer-domain.jpg)

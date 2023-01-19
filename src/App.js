@@ -1,5 +1,7 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+
 import axios from 'axios';
 import {Card,Container} from 'react-bootstrap';
 import errorImg from './images/error.jpg'
@@ -160,9 +162,9 @@ class App extends React.Component {
               </Card>  
           }
 
-          <Container>
+          {/* <Container> */}
             <Movies moviesData={this.state.movieData}/>
-          </Container>
+          {/* </Container> */}
         </main>
       </>
       
