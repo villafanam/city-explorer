@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
-import Card from 'react-bootstrap/Card';
+import {Card,Container} from 'react-bootstrap';
 import errorImg from './images/error.jpg'
 import Weather from './Weather'
-import { Container } from 'react-bootstrap';
+import Movies from './Movies';
 
 class App extends React.Component {
   constructor(props)
@@ -16,6 +16,7 @@ class App extends React.Component {
       error: false,
       errorMessage: '',
       weatherData: [],
+      movieData: []
     }
   }
 
@@ -23,6 +24,29 @@ class App extends React.Component {
     this.setState({
       city: event.target.value
     })
+  }
+
+  handleMovies = async() => {
+    try {
+      // TODO:  BUILD OUT MY URL FOR AXIOS TO HIT
+      let url = `${process.env.REACT_APP_SERVER}/movie?cityName=${this.state.city}`;
+
+      let moviesFromAxios = await axios.get(url);
+      console.log(moviesFromAxios.data);
+
+      // TODO: SET STATE WITH THE INFORMATION COMING BACK FROM AXIOS
+      this.setState({
+        movieData: moviesFromAxios.data
+      });
+
+
+    } catch (error) {
+      console.log(error);
+      this.setState({
+        error: true,
+        errorMessage: error.message
+      })
+    }
   }
 
   handleWeather = async (cityInfo) => {
@@ -34,10 +58,10 @@ class App extends React.Component {
       let url = `${process.env.REACT_APP_SERVER}/weather?lat=${cityInfo.lat}&lon=${cityInfo.lon}`;
       // let url = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}`;
       
-      console.log(url);
+      //console.log(url);
 
       let weatherData = await axios.get(url);
-      console.log(weatherData.data);
+      //console.log(weatherData.data);
 
     // TODO: SET STATE WITH THE INFORMATION COMING BACK FROM AXIOS
 
@@ -62,7 +86,7 @@ class App extends React.Component {
        let url = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json&limit=1`
 
        let cityDataFromAxios = await axios.get(url)
-      console.log(cityDataFromAxios.data)
+      //console.log(cityDataFromAxios.data)
 
       // TODO: save that data to state
       this.setState({
@@ -73,7 +97,9 @@ class App extends React.Component {
         // cityMap: `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${this.state.cityData.lat},${this.state.cityData.lon}&zoom=10`
       })
 
+      //functions calls
       this.handleWeather(cityDataFromAxios.data[0]);
+      this.handleMovies();
    
     } catch (error) {
       console.log(error);
@@ -131,9 +157,11 @@ class App extends React.Component {
                   
                 </Card.Body>
               </Card>  
-              
           }
 
+          <Container>
+            <Movies moviesData={this.state.movieData}/>
+          </Container>
         </main>
       </>
       
