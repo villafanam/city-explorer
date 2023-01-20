@@ -5,8 +5,8 @@ import './App.css';
 import axios from 'axios';
 import {Card,Container} from 'react-bootstrap';
 import errorImg from './images/error.jpg'
-import Weather from './Weather'
-import Movies from './Movies';
+import Weather from './component/Weather'
+import Movies from './component/Movies';
 
 class App extends React.Component {
   constructor(props)
@@ -58,12 +58,11 @@ class App extends React.Component {
     try {
       // TODO:  BUILD OUT MY URL FOR AXIOS TO HIT
       let url = `${process.env.REACT_APP_SERVER}/weather?lat=${cityInfo.lat}&lon=${cityInfo.lon}`;
-      // let url = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}`;
       
       //console.log(url);
 
       let weatherData = await axios.get(url);
-      console.log(weatherData.data);
+      //console.log(weatherData.data);
 
     // TODO: SET STATE WITH THE INFORMATION COMING BACK FROM AXIOS
 
@@ -125,15 +124,9 @@ class App extends React.Component {
               <button className='myButton' type='submit'>Explore</button>
             </label>
           </form>
+
           <Container className='weatherCard'>
-            {this.state.weatherData.map(forcast => {
-              return(
-                <Weather 
-                date={forcast.date}
-                description={forcast.description}
-                weatherImg={forcast.weatherImg}
-                />
-              );})}
+            <Weather weatherData={this.state.weatherData}/>
           </Container>
 
           {/* Ternary - W ? T : F */}
@@ -162,9 +155,8 @@ class App extends React.Component {
               </Card>  
           }
 
-          {/* <Container> */}
-            <Movies moviesData={this.state.movieData}/>
-          {/* </Container> */}
+          <Movies moviesData={this.state.movieData}/>
+          
         </main>
       </>
       

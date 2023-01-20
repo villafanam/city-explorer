@@ -26,6 +26,7 @@
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 + [ Error red text between blue binary data on screen by Marco Verch](https://www.flickr.com/photos/30478819@N08/32983982788)
 + [weather icons by Makin-Things](https://github.com/Makin-Things/weather-icons)
++ [404 error-page not found image](https://drudesk.com/sites/default/files/2018-02/404-error-page-not-found.jpg)
 
 ## Lab 06
 
@@ -55,8 +56,8 @@ Estimate of time needed to complete: 3 hr
 
 Start time: 2:00 PM
 
-Finish time:  PM
+Finish time: 6:10 PM
 
-Actual time needed to complete:  hr
+Actual time needed to complete: 4 hr
 
 ![city-explorer domain](../city-explorer/src/images/city-explorer-domain.jpg)
